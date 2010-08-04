@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://tablist/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://tablist/locale/overlay.dtd">
+<overlay id="tablist-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="overlay.js"/>
+  <script src="ff-overlay.js"/>
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="tablist-strings" src="chrome://tablist/locale/overlay.properties"/>
+  </stringbundleset>
+
+  <menupopup id="menu_ToolsPopup">
+    <menuitem id="tablist-hello" label="&tablist.label;"
+              oncommand="tablist.onMenuItemCommand(event);"/>
+  </menupopup>
+
+  <popup id="contentAreaContextMenu">
+    <menuitem id="context-tablist" label="&tablistContext.label;"
+              accesskey="&tablistContext.accesskey;"
+              insertafter="context-stop"
+              oncommand="tablist.onMenuItemCommand(event)"/>
+  </popup>
+
+  <toolbarpalette id="BrowserToolbarPalette">
+  <toolbarbutton id="tablist-toolbar-button" class="toolbarbutton-1 chromeclass-toolbar-additional"
+    label="&tablistToolbarButton.label;" tooltiptext="&tablistToolbarButton.tooltip;"
+    oncommand="tablist.onToolbarButtonCommand()"/>
+  </toolbarpalette>
+
+  <toolbox id="navigator-toolbox">
+    <toolbar class="chromeclass-toolbar" toolbarname="&tablistToolbar.name;" customizable="true" id="tablist-toolbar">
+      <label value="&tablistToolbar.label;"/>
+    </toolbar>
+  </toolbox>
+
+  <menupopup id="viewSidebarMenu">
+    <menuitem key="key_openSidebar_tablist" observes="viewSidebar_tablist" />
+  </menupopup>
+
+  <keyset id="mainKeyset">
+    <key id="key_openSidebar_tablist" command="viewSidebar_tablist" />
+  </keyset>
+
+  <broadcasterset id="mainBroadcasterSet">
+    <broadcaster id="viewSidebar_tablist"
+                 label="&tablistSidebar.label;"
+                 autoCheck="false"
+                 type="checkbox"
+                 group="sidebar"
+                 sidebarurl="chrome://tablist/content/ff-sidebar.xul"
+                 sidebartitle="&tablistSidebar.label;"
+                 oncommand="toggleSidebar('viewSidebar_tablist');" />
+  </broadcasterset>
+
+</overlay>

@@ -1,0 +1,7 @@
+content   tablist                 chrome/content/
+skin      tablist   classic/1.0   chrome/skin/
+locale    tablist   en-US         chrome/locale/en-US/
+
+
+overlay   chrome://browser/content/browser.xul   chrome://tablist/content/ff-overlay.xul
+style chrome://global/content/customizeToolbar.xul chrome://tablist/skin/overlay.css
