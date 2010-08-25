@@ -2,6 +2,7 @@
 <overlay id="tablist" 
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
  <statusbar id="status-bar">
-  <statusbarpanel id="my-panel" position="1" label="Hello, World"  />
+  <script type="application/javascript" src="chrome://tablist/content/test_clock.js" />
+  <statusbarpanel id="my-panel" position="1" label="Hello, World" onmousedown="initTime();" />
  </statusbar>
 </overlay>
