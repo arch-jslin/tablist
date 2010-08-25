@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<overlay id="tablist" 
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+ <statusbar id="status-bar">
+  <statusbarpanel id="my-panel" position="1" label="Hello, World"  />
+ </statusbar>
+</overlay>
