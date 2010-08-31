@@ -1,8 +1,15 @@
 <?xml version="1.0"?>
 <overlay id="tablist" 
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+ <popupset>
+  <menupopup id="testpopup" position="before_start">
+   <menuitem label="shit" />
+   <menuitem label="fuck" />
+   <menuitem label="damn" />
+  </menupopup>
+ </popupset>
  <statusbar id="status-bar">
   <script type="application/javascript" src="chrome://tablist/content/test_clock.js" />
-  <statusbarpanel id="my-panel" position="1" label="Hello, World" onmousedown="initTime();" />
+  <statusbarpanel id="my-panel" position="1" label="Hello, World" popup="testpopup" onmouseover="initTime(event);" />
  </statusbar>
 </overlay>
